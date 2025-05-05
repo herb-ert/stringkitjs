@@ -1,0 +1,11 @@
+{
+  "name": "stringkit",
+  "version": "0.0.0",
+  "description": "A focused, zero-dependency utility library for common string manipulations in JavaScript. Clean API, no global prototype pollution, and built for real-world use.",
+  "main": "Stringkit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "herb-ert",
+  "license": "MIT"
+}
