@@ -60,3 +60,7 @@ export function trimLines(string) {
   .map(line => line.trim())
   .join("\n");
 }
+
+export function removeExtraSpaces(string) {
+  return string.trim().replace(/\s+/g, " ");
+}
