@@ -21,3 +21,7 @@ export function title(string, smart = false) {
   })
   .join(" ");
 }
+
+export function slugify(string) {
+  return string.toLowerCase().replace(/ /g, "-");
+}
