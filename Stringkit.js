@@ -25,3 +25,7 @@ export function title(string, smart = false) {
 export function slugify(string) {
   return string.toLowerCase().replace(/ /g, "-");
 }
+
+export function truncate(string, length) {
+  return string.length > length ? string.substring(0, length) + "..." : string;
+}
