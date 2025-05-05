@@ -46,3 +46,10 @@ export function kebabCase(string) {
   .replace(/[\s_]+/g, "-")
   .toLowerCase();
 }
+
+export function snakeCase(string) {
+  return string
+  .replace(/([a-z])([A-Z])/g, "$1_$2")
+  .replace(/[\s\-]+/g, "_")
+  .toLowerCase();
+}
