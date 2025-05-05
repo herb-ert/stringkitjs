@@ -32,3 +32,42 @@ export function slugify(string) {
 export function truncate(string, length) {
   return string.length > length ? string.substring(0, length) + "..." : string;
 }
+
+export function camelCase(string) {
+  return string
+  .toLowerCase()
+  .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
+}
+
+export function kebabCase(string) {
+  return string
+  .replace(/([a-z])([A-Z])/g, "$1-$2")
+  .replace(/[\s_]+/g, "-")
+  .toLowerCase();
+}
+
+export function snakeCase(string) {
+  return string
+  .replace(/([a-z])([A-Z])/g, "$1_$2")
+  .replace(/[\s\-]+/g, "_")
+  .toLowerCase();
+}
+
+export function trimLines(string) {
+  return string
+  .split("\n")
+  .map(line => line.trim())
+  .join("\n");
+}
+
+export function removeExtraSpaces(string) {
+  return string.trim().replace(/\s+/g, " ");
+}
+
+export function isBlank(string) {
+  return /^\s*$/.test(string);
+}
+
+export function startsWithIgnoreCase(string, prefix) {
+  return string.toLowerCase().startsWith(prefix.toLowerCase());
+}
