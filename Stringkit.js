@@ -39,3 +39,10 @@ export function camelCase(string) {
   .toLowerCase()
   .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
 }
+
+export function kebabCase(string) {
+  return string
+  .replace(/([a-z])([A-Z])/g, "$1-$2")
+  .replace(/[\s_]+/g, "-")
+  .toLowerCase();
+}
