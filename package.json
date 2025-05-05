@@ -1,6 +1,6 @@
 {
   "name": "@herb-ert/stringkitjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A focused, zero-dependency utility library for common string manipulations in JavaScript. Clean API, no global prototype pollution, and built for real-world use.",
   "main": "Stringkit.js",
   "type": "module",
