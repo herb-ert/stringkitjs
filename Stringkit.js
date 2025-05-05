@@ -184,5 +184,3 @@ export function assertString(value, name = 'value') {
     throw new TypeError(`Expected "${name}" to be a string, but got ${typeof value}`);
   }
 }
-
-console.log(capitalize(42));
