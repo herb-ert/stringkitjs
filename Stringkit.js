@@ -64,3 +64,7 @@ export function trimLines(string) {
 export function removeExtraSpaces(string) {
   return string.trim().replace(/\s+/g, " ");
 }
+
+export function isBlank(string) {
+  return /^\s*$/.test(string);
+}
