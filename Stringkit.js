@@ -179,8 +179,10 @@ export function startsWithIgnoreCase(string, prefix) {
  * @param {string} [name='value'] - The name of the parameter (used in the error message).
  * @throws {TypeError} Throws if the value is not a string.
  */
-function assertString(value, name = 'value') {
+export function assertString(value, name = 'value') {
   if (typeof value !== 'string') {
     throw new TypeError(`Expected "${name}" to be a string, but got ${typeof value}`);
   }
 }
+
+console.log(capitalize(42));
