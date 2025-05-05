@@ -33,3 +33,9 @@ export function slugify(string) {
 export function truncate(string, length) {
   return string.length > length ? string.substring(0, length) + "..." : string;
 }
+
+export function camelCase(string) {
+  return string
+  .toLowerCase()
+  .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
+}
