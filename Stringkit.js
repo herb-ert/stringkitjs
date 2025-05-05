@@ -22,6 +22,10 @@ export function title(string, smart = false) {
   .join(" ");
 }
 
+export function stripTags(string) {
+  return string.replace(/<[^>]+>/g, "");
+}
+
 export function slugify(string) {
   return string.toLowerCase().replace(/ /g, "-");
 }
