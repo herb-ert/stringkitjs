@@ -5,7 +5,6 @@ export function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
 export function title(string, smart = false) {
   const exceptions = [
     "a", "an", "the", "and", "but", "for", "nor", "or", "so", "to", "up", "yet", "with", "as", "by", "in", "of", "on", "at", "from",
