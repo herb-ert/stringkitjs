@@ -68,3 +68,7 @@ export function removeExtraSpaces(string) {
 export function isBlank(string) {
   return /^\s*$/.test(string);
 }
+
+export function startsWithIgnoreCase(string, prefix) {
+  return string.toLowerCase().startsWith(prefix.toLowerCase());
+}
