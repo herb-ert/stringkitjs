@@ -53,3 +53,10 @@ export function snakeCase(string) {
   .replace(/[\s\-]+/g, "_")
   .toLowerCase();
 }
+
+export function trimLines(string) {
+  return string
+  .split("\n")
+  .map(line => line.trim())
+  .join("\n");
+}
