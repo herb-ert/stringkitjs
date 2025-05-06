@@ -209,6 +209,17 @@ export function escapeRegExp(string) {
 }
 
 /**
+ * Removes ANSI escape codes from a string.
+ *
+ * @param {string} string - The string to clean.
+ * @returns {string} The string without ANSI escape codes.
+ */
+export function stripAnsi(string) {
+  assertString(string, 'string');
+  return string.replace(/\x1B[\[\]0-?]*[ -/]*[@-~]/g, '');
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
