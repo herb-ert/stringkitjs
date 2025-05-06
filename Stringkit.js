@@ -341,6 +341,34 @@ export function truncateWords(string, wordCount) {
 }
 
 /**
+ * Converts a string to PascalCase.
+ *
+ * @param {string} string - The string to convert.
+ * @returns {string} The PascalCased string.
+ */
+export function pascalCase(string) {
+  assertString(string, 'string');
+  return string
+  .replace(/([a-z])([A-Z])/g, '$1 $2') // Separate camelCase words
+  .replace(/[^a-zA-Z0-9]+/g, ' ')      // Replace non-alphanumeric separators
+  .trim()
+  .split(/\s+/)
+  .map(word => capitalize(word))
+  .join('');
+}
+
+/**
+ * Reverses the characters in a string.
+ *
+ * @param {string} string - The string to reverse.
+ * @returns {string} The reversed string.
+ */
+export function reverse(string) {
+  assertString(string, 'string');
+  return string.split('').reverse().join('');
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
