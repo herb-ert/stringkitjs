@@ -1,6 +1,7 @@
 # 🧩 Stringkit.js
 
-A focused, zero-dependency utility library for common string manipulations in JavaScript. Clean API, no global prototype pollution, and built for real-world use.
+A focused, zero-dependency utility library for common string manipulations in JavaScript. Clean API, no global prototype
+pollution, and built for real-world use.
 
 [![NPM version](https://img.shields.io/npm/v/@herb-ert/stringkitjs)](https://www.npmjs.com/package/@herb-ert/stringkitjs)
 [![NPM downloads](https://img.shields.io/npm/dw/@herb-ert/stringkitjs)](https://www.npmjs.com/package/@herb-ert/stringkitjs)
@@ -76,7 +77,6 @@ console.log(kebabCase("Hello World"));  // "hello-world"
 | `pascalCase(string)` | Converts a string to PascalCase.|
 | `reverse(string)` | Reverses the characters in a string.|
 | `assertString(value, name)` | Asserts that the given value is a string.                                                                        |
-
 
 ## 📦 More Examples
 
