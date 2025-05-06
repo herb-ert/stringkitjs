@@ -281,6 +281,50 @@ export function center(string, length, char = ' ') {
 }
 
 /**
+ * Pads the left side of a string to a specified total length.
+ *
+ * @param {string} string - The string to pad.
+ * @param {number} length - The total desired length after padding.
+ * @param {string} [char=' '] - The character to use for padding.
+ * @returns {string} The left-padded string.
+ */
+export function lpad(string, length, char = ' ') {
+  assertString(string, 'string');
+  assertString(char, 'char');
+  if (char.length !== 1) {
+    throw new TypeError('Padding character must be a single character.');
+  }
+  if (typeof length !== 'number' || length < 0) {
+    throw new TypeError('Length must be a non-negative number.');
+  }
+
+  const padLength = Math.max(0, length - string.length);
+  return char.repeat(padLength) + string;
+}
+
+/**
+ * Pads the right side of a string to a specified total length.
+ *
+ * @param {string} string - The string to pad.
+ * @param {number} length - The total desired length after padding.
+ * @param {string} [char=' '] - The character to use for padding.
+ * @returns {string} The right-padded string.
+ */
+export function rpad(string, length, char = ' ') {
+  assertString(string, 'string');
+  assertString(char, 'char');
+  if (char.length !== 1) {
+    throw new TypeError('Padding character must be a single character.');
+  }
+  if (typeof length !== 'number' || length < 0) {
+    throw new TypeError('Length must be a non-negative number.');
+  }
+
+  const padLength = Math.max(0, length - string.length);
+  return string + char.repeat(padLength);
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
