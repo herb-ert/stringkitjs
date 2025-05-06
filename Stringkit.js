@@ -173,6 +173,19 @@ export function startsWithIgnoreCase(string, prefix) {
 }
 
 /**
+ * Checks if a string ends with a given suffix, ignoring case sensitivity.
+ *
+ * @param {string} string - The string to test.
+ * @param {string} suffix - The suffix to match against.
+ * @returns {boolean} Returns true if the string ends with the suffix (case-insensitive), otherwise false.
+ */
+export function endsWithIgnoreCase(string, suffix) {
+  assertString(string, 'string');
+  assertString(suffix, 'suffix');
+  return string.toLowerCase().endsWith(suffix.toLowerCase());
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
@@ -184,5 +197,3 @@ export function assertString(value, name = 'value') {
     throw new TypeError(`Expected "${name}" to be a string, but got ${typeof value}`);
   }
 }
-
-console.log(capitalize(42));
