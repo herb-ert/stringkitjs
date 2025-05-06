@@ -257,6 +257,30 @@ export function commonPrefix(strings) {
 }
 
 /**
+ * Centers a string by padding it on both sides with a specified character.
+ *
+ * @param {string} string - The string to center.
+ * @param {number} length - The total desired length after padding.
+ * @param {string} [char=' '] - The character to use for padding.
+ * @returns {string} The centered string.
+ */
+export function center(string, length, char = ' ') {
+  assertString(string, 'string');
+  assertString(char, 'char');
+  if (char.length !== 1) {
+    throw new TypeError('Padding character must be a single character.');
+  }
+  if (typeof length !== 'number' || length < 0) {
+    throw new TypeError('Length must be a non-negative number.');
+  }
+
+  const totalPad = Math.max(0, length - string.length);
+  const left = Math.floor(totalPad / 2);
+  const right = totalPad - left;
+  return char.repeat(left) + string + char.repeat(right);
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
