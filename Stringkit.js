@@ -220,6 +220,21 @@ export function stripAnsi(string) {
 }
 
 /**
+ * Repeats a string a specified number of times.
+ *
+ * @param {string} string - The string to repeat.
+ * @param {number} times - The number of times to repeat it.
+ * @returns {string} The resulting repeated string.
+ */
+export function repeatString(string, times) {
+  assertString(string, 'string');
+  if (!Number.isInteger(times) || times < 0) {
+    throw new TypeError(`Expected "times" to be a non-negative integer, got ${times}`);
+  }
+  return string.repeat(times);
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
