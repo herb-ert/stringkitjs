@@ -235,6 +235,28 @@ export function repeatString(string, times) {
 }
 
 /**
+ * Finds the longest common prefix among an array of strings.
+ *
+ * @param {string[]} strings - The strings to analyze.
+ * @returns {string} The longest common prefix.
+ */
+export function commonPrefix(strings) {
+  if (!Array.isArray(strings) || strings.some(str => typeof str !== 'string')) {
+    throw new TypeError('Expected an array of strings');
+  }
+  if (strings.length === 0) return '';
+
+  let prefix = strings[0];
+  for (const str of strings) {
+    while (!str.startsWith(prefix)) {
+      prefix = prefix.slice(0, -1);
+      if (prefix === '') return '';
+    }
+  }
+  return prefix;
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
