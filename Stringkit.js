@@ -198,6 +198,17 @@ export function includesIgnoreCase(string, substring) {
 }
 
 /**
+ * Escapes special characters in a string for use in a regular expression.
+ *
+ * @param {string} string - The string to escape.
+ * @returns {string} The escaped string safe for RegExp.
+ */
+export function escapeRegExp(string) {
+  assertString(string, 'string');
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
