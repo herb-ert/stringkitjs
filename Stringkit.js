@@ -186,6 +186,18 @@ export function endsWithIgnoreCase(string, suffix) {
 }
 
 /**
+ * Checks if a string includes a given substring, ignoring case sensitivity.
+ * @param string - The string to test.
+ * @param substring - The substring to match against.
+ * @returns {boolean} Returns true if the string includes the substring (case-insensitive), otherwise false.
+ */
+export function includesIgnoreCase(string, substring) {
+  assertString(string, 'string');
+  assertString(substring, 'substring');
+  return string.toLowerCase().includes(substring.toLowerCase());
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
