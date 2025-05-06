@@ -325,6 +325,22 @@ export function rpad(string, length, char = ' ') {
 }
 
 /**
+ * Truncates a string to a specific number of words.
+ *
+ * @param {string} string - The string to truncate.
+ * @param {number} wordCount - Maximum number of words to keep.
+ * @returns {string} The truncated string.
+ */
+export function truncateWords(string, wordCount) {
+  assertString(string, 'string');
+  if (!Number.isInteger(wordCount) || wordCount < 0) {
+    throw new TypeError(`Expected "wordCount" to be a non-negative integer, got ${wordCount}`);
+  }
+  const words = string.trim().split(/\s+/);
+  return words.length > wordCount ? words.slice(0, wordCount).join(' ') + '...' : string;
+}
+
+/**
  * Asserts that the given value is a string.
  *
  * @param {*} value - The value to check.
